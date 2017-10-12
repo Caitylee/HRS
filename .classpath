@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Java EE 6-Java EE 6"/>
+	<classpathentry kind="lib" path="E:/Java/jarpackage/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="E:/Java/jarpackage/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/Java/jarpackage/mysql-connector-java-5.1.40-bin.jar"/>
+	<classpathentry kind="lib" path="E:/Java/jarpackage/fastjson-1.2.38.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

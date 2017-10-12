@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/controller/AddDeptServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/controller/AddEmpServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/controller/BaseServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/controller/DelDeptServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/controller/LoginServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/controller/ShowEmpServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/domain/Dept.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/domain/Emp.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/domain/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/dto/EmpDto.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/filter/AuthenticationFilter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/persistence/DeptDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/persistence/EmpDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/persistence/UserDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/persistence/impl/DeptDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/persistence/impl/EmpDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/persistence/impl/UserDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/service/DeptService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/service/EmpService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/service/UserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/service/impl/EmpServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/service/impl/ServiceFactory.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/service/impl/UserServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/util/CommonUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/util/DbException.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/util/DbResourceManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/qfedu/util/PageBean.java" charset="GBK" />
+  </component>
+</project>
