@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="hrs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="hrs" target="1.8" />
       <module name="MaVen" target="1.8" />
     </bytecodeTargetLevel>
   </component>
