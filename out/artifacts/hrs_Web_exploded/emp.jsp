@@ -113,29 +113,29 @@
                         </th>
                     </tr>
                     </thead>
-                    <tbody id="empInfo" >
+                    <tbody id="empInfo">
 
                     </tbody>
 
                 </table>
-                <div align="center">
+                <div align="center" id="paging">
                     <a id="first">首页</a>&nbsp;&nbsp;
                     <a id="prev">上一页</a>&nbsp;&nbsp;
                     <a id="next">下一页</a>&nbsp;&nbsp;
                     <a id="last">末页</a>
                 </div>
             </div>
-<%--            <div class="pagination pull-right">
-                <ul>
-                    <li><a href="#">&#8249;</a></li>
-                    <li><a class="active" href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&#8250;</a></li>
-                </ul>
-            </div>--%>
+            <%--            <div class="pagination pull-right">
+                            <ul>
+                                <li><a href="#">&#8249;</a></li>
+                                <li><a class="active" href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&#8250;</a></li>
+                            </ul>
+                        </div>--%>
             <!-- end users table -->
         </div>
     </div>
@@ -154,53 +154,54 @@
     });
 
     function loadDataModel(page) {
-        $.getJSON("emp", { 'page': page }, function(json) {
+        $.getJSON("emp", {'page': page}, function (json) {
             var empList = json.dataModel;
-            if (empList.size>0){
-                var prevPage = json.currentPage - 1;
-                var nextPage = json.currentPage + 1;
-                var lastPage = json.totalPage;
-                if (json.currentPage > 1) {
-                    $("#first").attr("href", "javascript:loadDataModel(1)");
-                    $("#prev").attr("href", "javascript:loadDataModel(" + prevPage + ")");
-                } else {
-                    $("#first").removeAttr("href");
-                    $("#prev").removeAttr("href");
-                }
-                if (json.currentPage < json.totalPage) {
-                    $("#next").attr("href", "javascript:loadDataModel(" + nextPage + ")")
-                    $("#last").attr("href", "javascript:loadDataModel(" + lastPage + ")")
-                } else {
-                    $("#next").removeAttr("href");
-                    $("#last").removeAttr("href");
-                }
-                $("#empInfo tr:gt(0)").remove();
-                for (var i = 0; i < empList.length; ++i) {
-                    var emp = empList[i];
-                    var tr = $("<tr>").attr("id", "tr"+emp.no)
-                        .append($("<td>").text(emp.no))
-                        .append($("<td>").append($("<a>")
-                            .text(emp.name).attr("href", "empinfo?no=" + emp.no)))
-                        .append($("<td>").text(emp.sex))
-                        .append($("<td>").text(emp.job))
-                        .append($("<td>").text(emp.status))
-                        .append($("<td>").text(emp.tel))
-                        .append($("<td>").text(emp.deptName))
-                        .append($("<td>")
-                            .append($("<a>").text("编辑").attr("href", "editEmp?fun=edit&no=" + emp.no))
-                            .append("&nbsp;&nbsp;")
-                            .append($("<a>").text("删除").attr("href", "javascript:deleteEmp("+emp.no+")" ))
-                        );
-
-                    $("#empInfo").append(tr);
-                }
-            }else{
-                var span=$("<span>").text("没有相关数据")
+            if (empList.length==0) {
+                $("#paging").remove();
+                $("#empInfo").append($("<span>").text("没有相关数据"));
+            } else {
+            var prevPage = json.currentPage - 1;
+            var nextPage = json.currentPage + 1;
+            var lastPage = json.totalPage;
+            if (json.currentPage > 1) {
+                $("#first").attr("href", "javascript:loadDataModel(1)");
+                $("#prev").attr("href", "javascript:loadDataModel(" + prevPage + ")");
+            } else {
+                $("#first").removeAttr("href");
+                $("#prev").removeAttr("href");
             }
+            if (json.currentPage < json.totalPage) {
+                $("#next").attr("href", "javascript:loadDataModel(" + nextPage + ")")
+                $("#last").attr("href", "javascript:loadDataModel(" + lastPage + ")")
+            } else {
+                $("#next").removeAttr("href");
+                $("#last").removeAttr("href");
+            }
+            $("#empInfo tr:gt(0)").remove();
+
+
+            for (var i = 0; i < empList.length; ++i) {
+                var emp = empList[i];
+                var tr = $("<tr>").attr("id", "tr" + emp.no)
+                    .append($("<td>").text(emp.no))
+                    .append($("<td>").append($("<a>")
+                        .text(emp.name).attr("href", "empinfo?no=" + emp.no)))
+                    .append($("<td>").text(emp.sex))
+                    .append($("<td>").text(emp.job))
+                    .append($("<td>").text(emp.status))
+                    .append($("<td>").text(emp.tel))
+                    .append($("<td>").text(emp.deptName))
+                    .append($("<td>")
+                        .append($("<a>").text("编辑").attr("href", "editEmp?fun=edit&no=" + emp.no))
+                        .append("&nbsp;&nbsp;")
+                        .append($("<a>").text("删除").attr("href", "javascript:deleteEmp(" + emp.no + ")"))
+                    );
+                $("#empInfo").append(tr);
+            }
+        }
 
         });
     }
-
 
 
     function deleteEmp(no) {
